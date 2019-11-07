@@ -1,0 +1,73 @@
+\documentclass[11pt,spanish]{endm}
+\usepackage{endmmacro}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{dsfont}
+
+
+% The following is enclosed to allow easy detection of differences in
+% ascii coding.
+% Upper-case    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+% Lower-case    a b c d e f g h i j k l m n o p q r s t u v w x y z
+% Digits        0 1 2 3 4 5 6 7 8 9
+% Exclamation   !           Double quote "          Hash (number) #
+% Dollar        $           Percent      %          Ampersand     &
+% Acute accent  '           Left paren   (          Right paren   )
+% Asterisk      *           Plus         +          Comma         ,
+% Minus         -           Point        .          Solidus       /
+% Colon         :           Semicolon    ;          Less than     <
+% Equals        =           Greater than >          Question mark ?
+% At            @           Left bracket [          Backslash     \
+% Right bracket ]           Circumflex   ^          Underscore    _
+% Grave accent  `           Left brace   {          Vertical bar  |
+% Right brace   }           Tilde        ~
+\usepackage{adjustbox} % Used to constrain images to a maximum size
+\newcommand{\Nat}{{\mathbb N}}
+\newcommand{\Real}{{\mathbb R}}
+\def\lastname{Please list your Lastname here}
+
+\begin{document}
+
+% DO NOT REMOVE: Creates space for Elsevier logo, ScienceDirect logo
+% and ENDM logo
+\begin{verbatim}
+\end{verbatim}\vspace{2.5cm}
+
+\begin{frontmatter}
+
+\title{Métodos Númericos}
+
+%\subtitle{\tituloTP}{Trabajo Práctico Nro. 3} 
+%\subtitle{\subTituloTP}{\emph{Cuadrados Mínimos Lineales}}
+
+\author{Catriel Omar D'Elía\thanksref{myemail}} 
+\author{Gian Franco Lancioni\thanksref{myemail1}}
+\author{Joaquín Perez Centeno\thanksref{myemail2}}
+\address{Depatamento de Computación\\ Universidad de Buenos Aires\\ Buenos Aires, Argentina}
+
+\thanks[myemail]{Email:
+   \href{catriel.delia@gmail.com} {\texttt{\normalshape
+   catriel.delia@gmail.com}}} \thanks[myemail1]{Email:
+   \href{gianflancioni@gmail.com} {\texttt{\normalshape
+   gianflancioni@gmail.com}}} \thanks[myemail2]{Email:
+   \href{joaquinpcenteno@gmail.com} {\texttt{\normalshape
+   joaquinpcenteno@gmail.com}}}
+
+\include{sec-abstract}
+
+\end{frontmatter}
+
+\include{sec-introduccion-teorica}
+\include{sec-desarrollo}
+\include{sec-experimentacion}
+
+\section{Referencias}
+
+\bibliographystyle{plain}
+\bibliography{bibliography.bib}
+
+\end{document}
