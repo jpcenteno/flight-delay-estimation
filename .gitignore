@@ -4,3 +4,7 @@
 *.log
 *.out
 *.bbl
+
+# compilados
+build
+cml.cpython*so
