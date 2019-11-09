@@ -1,0 +1,6 @@
+# basura de latex
+*.aux
+*.blg
+*.log
+*.out
+*.bbl
