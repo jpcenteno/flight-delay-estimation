@@ -1,6 +1,16 @@
 # TP n°3 Método Numéricos - Cuadrados Mínimos Lineales
 ## Intro a IA y ML.
 
+### Inicializar submódulos
+
+Este TP usa dos proyectos: eigen y pybind11. Para compilar es necesario descargar los submódulos e inicializarlos:
+
+``` bash
+git submodule init
+git submodule update
+```
+
+Los mismos están en src/submodules
 
 ### Descargar data
 
