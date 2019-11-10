@@ -17,4 +17,4 @@ cmake: $(BUILD-DIR)
 
 clean:
 	rm -rf build
-	rm notebooks/cml.cpython-37m-x86_64-linux-gnu.so
+	rm notebooks/cml*.so

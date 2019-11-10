@@ -8,3 +8,6 @@
 # compilados
 build
 cml.cpython*so
+
+#basura de python/notebook
+__pycache__
