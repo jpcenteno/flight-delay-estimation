@@ -42,11 +42,11 @@ include_directories(src/submodules/eigen)
 
 add_subdirectory(src/submodules/pybind11)
 
-pybind11_add_module(cml
+pybind11_add_module(cml_cpp
                     src/cml.cpp)
 
 # Por cada módulo que use OpenMP ponerlo como dependencia de esta forma
-target_link_libraries(cml LINK_PUBLIC OpenMP::OpenMP_CXX)
+target_link_libraries(cml_cpp LINK_PUBLIC OpenMP::OpenMP_CXX)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 
 # Esta variable se usa para fijar el directorio de instalación
@@ -56,7 +56,7 @@ set(CMAKE_INSTALL_PREFIX
 
 message(CMAKE_INSTALL_PREFIX = "${CMAKE_INSTALL_PREFIX}")
 
-install(TARGETS cml DESTINATION ${CMAKE_INSTALL_PREFIX}/notebooks)
+install(TARGETS cml_cpp DESTINATION ${CMAKE_INSTALL_PREFIX}/notebooks)
 
 # Crear un binario para testing manteniendo las dependencias de python por separado
 #add_executable(tp2
