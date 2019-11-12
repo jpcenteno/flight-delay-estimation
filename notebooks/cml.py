@@ -35,7 +35,25 @@ for clazz in [normal_equations_solver, svd_solver, qr_solver, qr_col_pivot_solve
             return f(A, b)
 
 
-class lsqPredictor:
+class Predictor:
+    def fit(self, X_train, y_train, **fit_params):
+        A = np.stack(X_train)
+        self.coefs = np.linalg.solve(A.T@A, A.T@y_train)
+
+    def predict(self, pred_set):
+        arrays = self.get_x_vals(pred_set)
+        full_A = np.stack(arrays)
+        return full_A@self.coefs
+
+class LinealRegression(Predictor):
+    def get_x_vals(self, x):
+        x_vals = []
+        for i in range(len(x)):
+            row = np.array([i, 1])
+            x_vals.append(row)
+        return x_vals
+
+class lsqPredictor(Predictor):
     def __init__(self, phases, freqs, max_grade):
         self.phases = phases
         self.freqs = freqs
@@ -64,15 +82,6 @@ class lsqPredictor:
             row = np.array([i**p for p in range(self.max_grade+1)] + self.trig_vals(i), dtype='float')
             x_vals.append(row)
         return x_vals
-
-    def fit(self, X_train, y_train, **fit_params):
-        A = np.stack(X_train)
-        self.coefs = np.linalg.solve(A.T@A, A.T@y_train)
-
-    def predict(self, pred_set):
-        arrays = self.get_x_vals(pred_set)
-        full_A = np.stack(arrays)
-        return full_A@self.coefs
 
 
 def cross_val_timeline_scores_with_splits(lsq, data, splits):
