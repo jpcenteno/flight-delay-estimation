@@ -1,0 +1,6 @@
+origin_city,dest_city,FlightNum
+Los Angeles,San Francisco,100857
+San Francisco,Los Angeles,100583
+Chicago,Minneapolis,100098
+Minneapolis,Chicago,99963
+Los Angeles,Las Vegas,96728
