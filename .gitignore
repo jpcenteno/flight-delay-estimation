@@ -173,3 +173,5 @@ dmypy.json
 *.DS_Store
 data/airports.csv
 data/carriers.csv
+/data/tmp
+/data/sample.csv
