@@ -7,8 +7,7 @@ year=$1
 for link in $(grep ${year}.csv dataset_list.txt)
 do
     wget -c $link
-    bunzip2 -k *.bz2
-    rm *.bz2
     mv *.csv ../data/
+    mv *.bz2 ../data/
 done
 

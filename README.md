@@ -12,6 +12,14 @@ git submodule update
 
 Los mismos están en src/submodules
 
+### Compilación de CML
+
+simplemente escribir ```make``` en el directorio principal. Si el
+directorio ```build``` existe, borrarlo, o escribir ```make clean```
+
+Esto corre cmake, make y deposita el código C++ con bindings python en
+la carpeta notebook listo para ser consumido.
+
 ### Descargar data
 
 En tools hay un script download-data, se lo puedo usar de la siguiente manera:
