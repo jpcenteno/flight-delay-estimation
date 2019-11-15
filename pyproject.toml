@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "mn-tp3"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pandas = "^0.25.3"
+jupyter = "^1.0"
+numpy = "^1.17"
+scikit-learn = "^0.21.3"
+statsmodels = "^0.10.1"
+seaborn = "^0.9.0"
+timezonefinder = "^4.1"
+jupyter-spaces = "^0.1.2"
+
+[tool.poetry.dev-dependencies]
+ipython = "^7.9"
+mypy = "^0.740.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
