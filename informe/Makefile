@@ -13,10 +13,16 @@ all: informe.pdf clean
 #	bibtex informe
 #	latex $< # dos veces para las referencias
 
-%.ps: %.dvi
-	dvips $<
+#%.ps: %.dvi
+#	dvips $<
 
 %.pdf: %.tex
+	@echo "Suele fallar, si no anda correr a mano"
+	@echo "pdflatex $<"
+	@echo "bibtex informe"
+	@echo "pdflatex $<"
+	pdflatex $<
+	bibtex informe
 	pdflatex $<
 
 clean:
