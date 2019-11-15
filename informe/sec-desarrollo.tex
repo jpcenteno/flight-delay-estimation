@@ -1,1 +1,8 @@
 \section{Desarrollo}
+Para estacionalidad en CML fijamos senoides con frecuencias y fases \footnote{Al no ser coeficientes CML no los permite resolver.} de acuerdo a nuestra intuición: buscamos frecuencias relacionadas a las estaciones como puede ser bimensualmente, trimestralmente, semestralmente y anualmente.
+No granularizamos demasiado tales periodos para evitar \emph{overfittear}: no tiene sentido una estacionalidad cada 10 meses si no existen eventos importantes con esa frecuencia en el mundo real.
+Para las fases decidimos usar aquellas que permiten que las ondas se inicialicen en puntos intermedios o en picos: $\frac{i\pi}{4}$.
+Estas frecuencias anulan la necesidad de usar cosenos, que tampoco usamos para prevenir matrices singulares considerando los senos de distintas fases.
+Viendo que las componentes polinomiales ajustaban mejor al entrenamiento pero a costas de predecir mucho peor decidimos dejar solamente hasta grado 1 para permitir cambios lineales.
+
+Para validación cruzada usamos la librería de scikit-learn que dispone de métodos de partición para tal motivo de series de tiempo. La librería particiona, para $n$ splits, todas las secuencias con los primeros $\frac{i}{n+1}$ ($1\leq i\leq n$) registros para entrenamiento y el resto para predicciones.
