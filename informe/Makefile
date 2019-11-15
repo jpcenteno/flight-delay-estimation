@@ -8,16 +8,16 @@
 #all: clean
 all: informe.pdf clean
 
-%.dvi: %.tex
-	latex $<
-	bibtex informe
-	latex $< # dos veces para las referencias
+#%.dvi: %.tex
+#	latex $<
+#	bibtex informe
+#	latex $< # dos veces para las referencias
 
 %.ps: %.dvi
 	dvips $<
 
-%.pdf: %.ps
-	ps2pdf $<
+%.pdf: %.tex
+	pdflatex $<
 
 clean:
 	-rm *.blg
