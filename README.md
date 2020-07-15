@@ -1,5 +1,10 @@
-# TP n°3 Método Numéricos - Cuadrados Mínimos Lineales
-## Intro a IA y ML.
+# Flight Delay Estimation
+
+This project provides an efficient C++ implementation of an Ordinary Least Squares (OLS) predictor and classifier. The OLS model was implemented using Eigen, which is a C++ library akin to Numpy. 
+
+The OLS model was then wrapped into Python via Pybind11 to perform EDA and arrival delay prediction on a 12GB flight dataset.
+
+This piece of code was written for the "Numerical Methods" course, taught during the second semester of 2019 at the Faculty of Natural and Exact Sciences, University of Buenos Aires.
 
 ### Inicializar submódulos
 
